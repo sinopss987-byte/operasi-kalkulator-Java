@@ -1,0 +1,42 @@
+public class Main {
+    public static void main(String[] args) {
+        double angka1 = 20;
+        char operasi = '*'; // ganti jadi '/', '%', '+', '-' buat tes
+        double angka2 = 4;
+
+        double hasil = 0;
+
+        // IF ELSE validasi
+        if (operasi != '+' && operasi != '-' && operasi != '*' && operasi != '/' && operasi != '%') {
+            System.out.println("Operator tidak valid!");
+            return;
+        }
+
+        if ((operasi == '/' || operasi == '%') && angka2 == 0) {
+            System.out.println("Error: Tidak bisa dibagi 0!");
+            return;
+        }
+
+        // SWITCH CASE 5 operasi - BISA KALI DAN BAGI
+        switch (operasi) {
+            case '+':
+                hasil = angka1 + angka2;
+                break;
+            case '-':
+                hasil = angka1 - angka2;
+                break;
+            case '*':
+                hasil = angka1 * angka2; // KALI
+                break;
+            case '/':
+                hasil = angka1 / angka2; // BAGI
+                break;
+            case '%':
+                hasil = angka1 % angka2; // SISA BAGI
+                break;
+        }
+
+        System.out.println("Tes: " + angka1 + " " + operasi + " " + angka2 + " = " + hasil);
+        System.out.println("Perkalian dan pembagian 100% bisa!");
+    }
+}
